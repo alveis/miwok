@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Multiscreen-java</string>
+    <string name="colors_activity">Colors</string>
+    <string name="numbers_activity">Numbers</string>
+    <string name="family_activity">Family</string>
+    <string name="second_activity">Second Activity</string>
+    <string name="phrases_activity">Phrases</string>
+</resources>
