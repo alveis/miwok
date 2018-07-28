@@ -4,8 +4,7 @@
     android:id="@+id/numbers_root_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.alveis.multiscreen_java.NumbersActivity">
+    android:orientation="vertical">
 
     <ListView
         android:id="@+id/list"
