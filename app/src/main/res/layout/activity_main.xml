@@ -11,14 +11,14 @@
         android:layout_height="wrap_content"
         android:text="Numbers"
         android:padding="16dp"
-        android:background="@color/colorAccent"
+        android:background="#de9323"
         android:id="@+id/numbers" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:background="@color/colorPrimary"
+        android:background="#3f7523"
         android:text="Family"
         android:id="@+id/family" />
 
@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:background="@color/colorAccent"
+        android:background="#551067"
         android:text="Colors"
         android:id="@+id/colors" />
 
