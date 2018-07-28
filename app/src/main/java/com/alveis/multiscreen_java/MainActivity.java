@@ -7,8 +7,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import r
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -53,15 +51,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        TextView extra = (TextView) findViewById(R.id.extra)
-                extra.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-//                        Intent startExtra = new Intent(MainActivity.this, ExtraActivity.class);
-//                        startActivity(startExtra);
-                        //Toast.makeText(MainActivity.CONTEXT_IGNORE_SECURITY).LENGTH_SHORT.show();
-                    }
-                });
+//        TextView extra = (TextView) findViewById(R.id.extra);
+//                extra.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+////                        Intent startExtra = new Intent(MainActivity.this, ExtraActivity.class);
+////                        startActivity(startExtra);
+//                        //Toast.makeText(MainActivity.CONTEXT_IGNORE_SECURITY).LENGTH_SHORT.show();
+//                    }
+//                });
 
     }
 
