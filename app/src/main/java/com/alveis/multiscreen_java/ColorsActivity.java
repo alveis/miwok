@@ -16,7 +16,7 @@ public class ColorsActivity extends AppCompatActivity {
 
 
         ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("red", "wetetti"));
+        words.add(new Word("red", "wetetti", R.drawable.ic_launcher_foreground));
         words.add(new Word("mustard yellow", "chiwiite"));
         words.add(new Word("dusty yellow", "topiise"));
         words.add(new Word("green", "chokokki"));

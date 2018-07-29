@@ -16,7 +16,7 @@ public class NumbersActivity extends AppCompatActivity {
 
 
         ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("one", "lutti"));
+        words.add(new Word("one", "lutti", R.drawable.ic_launcher_background));
         words.add(new Word("two", "otiiko"));
         words.add(new Word("three", "tolookosu"));
         words.add(new Word("four", "oyyisa"));
