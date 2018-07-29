@@ -3,6 +3,7 @@ package com.alveis.multiscreen_java;
 import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +14,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class WordAdapter extends ArrayAdapter<Word>{
-    public WordAdapter(Activity context, ArrayList<Word> words){
+    private int mColorResourceId;
+
+    public WordAdapter(Activity context, ArrayList<Word> words, int colorResourceId){
         super(context, 0, words);
+        mColorResourceId = colorResourceId;
     }
     private static final String LOG_TAG = WordAdapter.class.getSimpleName();
     @NonNull
@@ -41,8 +45,13 @@ public class WordAdapter extends ArrayAdapter<Word>{
         }else {
             imageView.setVisibility(View.GONE);
         }
+        View textContainer = listItemView.findViewById(R.id.text_container);
+        int color = ContextCompat.getColor(getContext(), mColorResourceId);
 
-        return super.getView(position, convertView, parent);
+        textContainer.setBackgroundColor(color);
+
+        return listItemView;
+        //return super.getView(position, convertView, parent);
 
     }
 }
