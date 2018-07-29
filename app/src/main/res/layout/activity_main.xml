@@ -11,14 +11,14 @@
         android:layout_height="wrap_content"
         android:text="Numbers"
         android:padding="16dp"
-        android:background="#de9323"
+        android:background="@color/category_numbers"
         android:id="@+id/numbers" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:background="#3f7523"
+        android:background="@color/category_family"
         android:text="Family"
         android:id="@+id/family" />
 
@@ -26,14 +26,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:background="#551067"
+        android:background="@color/category_colors"
         android:text="Colors"
         android:id="@+id/colors" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/category_phrases"
         android:padding="16dp"
         android:text="Phrases"
         android:id="@+id/phrases" />
