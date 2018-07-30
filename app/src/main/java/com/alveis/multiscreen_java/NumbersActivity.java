@@ -39,7 +39,7 @@ public class NumbersActivity extends AppCompatActivity {
 //        while (index<words.size()){
 //            TextView number = new TextView(this);
 //            number.setText(words.get(index));
-//            index++;
+//            index++;.
 //        }
 
         WordAdapter itemsAdapter = new WordAdapter(this,  words, R.color.category_numbers);
