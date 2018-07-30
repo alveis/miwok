@@ -17,9 +17,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SecondActivity"
-            android:label="@string/second_activity" />
-        <activity
             android:name=".NumbersActivity"
             android:label="@string/numbers_activity" />
         <activity
