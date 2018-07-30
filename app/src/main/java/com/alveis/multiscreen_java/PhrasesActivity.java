@@ -15,17 +15,17 @@ public class PhrasesActivity extends AppCompatActivity {
         setContentView(R.layout.list_item);
 
 
-        ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("where are you going", "minto wuksus"));
-        words.add(new Word("what is your name", "tinne oyaase'na"));
-        words.add(new Word("my name is...", "oyaaseti"));
-        words.add(new Word("how are you feeling", "michekses?"));
-        words.add(new Word("i am feeling good.", "kuchi achit"));
-        words.add(new Word("are you coming?", "eenes'aa?"));
-        words.add(new Word("yes i'm coming", "hee' eenem"));
-        words.add(new Word("i'm coming.", "eenem"));
-        words.add(new Word("Let's go.", "yoowutis"));
-        words.add(new Word("come here.", "enni'nem"));
+        final ArrayList<Word> words = new ArrayList<Word>();
+        words.add(new Word("where are you going", "minto wuksus", R.raw.jason_derulo_stupid_love));
+        words.add(new Word("what is your name", "tinne oyaase'na", R.raw.jason_derulo_stupid_love));
+        words.add(new Word("my name is...", "oyaaseti", R.raw.jason_derulo_stupid_love));
+        words.add(new Word("how are you feeling", "michekses?", R.raw.jason_derulo_stupid_love));
+        words.add(new Word("i am feeling good.", "kuchi achit", R.raw.jason_derulo_stupid_love));
+        words.add(new Word("are you coming?", "eenes'aa?", R.raw.jason_derulo_stupid_love));
+        words.add(new Word("yes i'm coming", "hee' eenem", R.raw.jason_derulo_stupid_love));
+        words.add(new Word("i'm coming.", "eenem", R.raw.jason_derulo_stupid_love));
+        words.add(new Word("Let's go.", "yoowutis", R.raw.jason_derulo_stupid_love));
+        words.add(new Word("come here.", "enni'nem", R.raw.jason_derulo_stupid_love));
 
 
         Log.v("NumbersActivity", "words is an array of numbers one to ten in an array");

@@ -7,12 +7,13 @@ public class Word {
     private static final int NO_IMAGE = -1;
     private int mAudioResourceId;
 
-    public Word(String defaultTranslation, String miworkTranslation){
+    public Word(String defaultTranslation, String miworkTranslation, int audioResourceId){
         mMiworkTranslation = miworkTranslation;
         mDefaultTranslation = defaultTranslation;
+        mAudioResourceId = audioResourceId;
     }
 
-    public Word(String defaultTranslation, String miworkTranslation, int imageResourceId){
+    public Word(String defaultTranslation, String miworkTranslation, int imageResourceId, int audioResourceId){
         mMiworkTranslation = miworkTranslation;
         mDefaultTranslation = defaultTranslation;
         mImageResourceId = imageResourceId;
@@ -35,5 +36,9 @@ public class Word {
 
     public boolean hasImage(){
         return  mImageResourceId != NO_IMAGE;
+    }
+
+    public int getAudioResourceId() {
+        return mAudioResourceId;
     }
 }

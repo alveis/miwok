@@ -15,15 +15,15 @@ public class ColorsActivity extends AppCompatActivity {
         setContentView(R.layout.list_item);
 
 
-        ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("red", "wetetti", R.drawable.ic_launcher_foreground));
-        words.add(new Word("mustard yellow", "chiwiite", R.drawable.ic_launcher_background));
-        words.add(new Word("dusty yellow", "topiise", R.drawable.ic_launcher_background));
-        words.add(new Word("green", "chokokki", R.drawable.ic_launcher_background));
-        words.add(new Word("brown", "takaaki", R.drawable.ic_launcher_background));
-        words.add(new Word("grey", "topoppi", R.drawable.ic_launcher_background));
-        words.add(new Word("black", "kululli", R.drawable.ic_launcher_background));
-        words.add(new Word("white", "kelelli", R.drawable.ic_launcher_background));
+        final ArrayList<Word> words = new ArrayList<Word>();
+        words.add(new Word("red", "wetetti", R.drawable.ic_launcher_foreground, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("mustard yellow", "chiwiite", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("dusty yellow", "topiise", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("green", "chokokki", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("brown", "takaaki", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("grey", "topoppi", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("black", "kululli", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("white", "kelelli", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
 
 
         Log.v("NumbersActivity", "words is an array of numbers one to ten in an array");

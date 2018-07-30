@@ -30,7 +30,6 @@
         <activity
             android:name=".PhrasesActivity"
             android:label="@string/phrases_activity" />
-        <activity android:name=".list_item"></activity>
     </application>
 
 </manifest>

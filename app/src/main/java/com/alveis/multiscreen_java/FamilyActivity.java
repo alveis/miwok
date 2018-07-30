@@ -15,17 +15,17 @@ public class FamilyActivity extends AppCompatActivity {
         setContentView(R.layout.list_item);
 
 
-        ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("father", "epe", R.drawable.ic_launcher_background));
-        words.add(new Word("mother", "ete", R.drawable.ic_launcher_background));
-        words.add(new Word("son", "angsi", R.drawable.ic_launcher_background));
-        words.add(new Word("duaghter", "tune", R.drawable.ic_launcher_background));
-        words.add(new Word("older brother", "taachi", R.drawable.ic_launcher_background));
-        words.add(new Word("younger brother", "chalitti", R.drawable.ic_launcher_background));
-        words.add(new Word("older sister", "tete", R.drawable.ic_launcher_background));
-        words.add(new Word("younger sister", "kolliti", R.drawable.ic_launcher_background));
-        words.add(new Word("grandmother", "ama", R.drawable.ic_launcher_background));
-        words.add(new Word("grandfather", "paapa", R.drawable.ic_launcher_background));
+        final ArrayList<Word> words = new ArrayList<Word>();
+        words.add(new Word("father", "epe", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("mother", "ete", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("son", "angsi", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("duaghter", "tune", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("older brother", "taachi", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("younger brother", "chalitti", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("older sister", "tete", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("younger sister", "kolliti", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("grandmother", "ama", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("grandfather", "paapa", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
 
 
         Log.v("NumbersActivity", "words is an array of numbers one to ten in an array");

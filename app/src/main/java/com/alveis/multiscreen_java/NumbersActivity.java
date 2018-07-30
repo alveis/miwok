@@ -21,15 +21,15 @@ public class NumbersActivity extends AppCompatActivity {
 
 
         final ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("one", "lutti", R.drawable.ic_launcher_background));
-        words.add(new Word("two", "otiiko", R.drawable.ic_launcher_background));
-        words.add(new Word("three", "tolookosu", R.drawable.ic_launcher_background));
-        words.add(new Word("four", "oyyisa", R.drawable.ic_launcher_background));
-        words.add(new Word("five", "massokka", R.drawable.ic_launcher_background));
-        words.add(new Word("six", "temmoka", R.drawable.ic_launcher_background));
-        words.add(new Word("seven", "kenekaku", R.drawable.ic_launcher_background));
-        words.add(new Word("nine", "wo'e", R.drawable.ic_launcher_background));
-        words.add(new Word("ten", "na'aacha", R.drawable.ic_launcher_background));
+        words.add(new Word("one", "lutti", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("two", "otiiko", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("three", "tolookosu", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("four", "oyyisa", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("five", "massokka", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("six", "temmoka", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("seven", "kenekaku", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("nine", "wo'e", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
+        words.add(new Word("ten", "na'aacha", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
 
 
         Log.v("NumbersActivity", "words is an array of numbers one to ten in an array");
@@ -48,8 +48,9 @@ public class NumbersActivity extends AppCompatActivity {
         listView.setAdapter(itemsAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                mMediaPlayer = MediaPlayer.create(NumbersActivity.this,  R.raw.jason_derulo_stupid_love);
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Word word = words.get(position);
+                mMediaPlayer = MediaPlayer.create(NumbersActivity.this,  word.getAudioResourceId());
                 mMediaPlayer.start();
                 //Toast.makeText(NumbersActivity.this, "play", Toast.LENGTH_SHORT).show();
             }
