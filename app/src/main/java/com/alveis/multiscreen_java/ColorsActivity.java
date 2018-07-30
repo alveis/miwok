@@ -12,18 +12,18 @@ public class ColorsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.word_list);
+        setContentView(R.layout.list_item);
 
 
         ArrayList<Word> words = new ArrayList<Word>();
         words.add(new Word("red", "wetetti", R.drawable.ic_launcher_foreground));
-        words.add(new Word("mustard yellow", "chiwiite"));
-        words.add(new Word("dusty yellow", "topiise"));
-        words.add(new Word("green", "chokokki"));
-        words.add(new Word("brown", "takaaki"));
-        words.add(new Word("grey", "topoppi"));
-        words.add(new Word("black", "kululli"));
-        words.add(new Word("white", "kelelli"));
+        words.add(new Word("mustard yellow", "chiwiite", R.drawable.ic_launcher_background));
+        words.add(new Word("dusty yellow", "topiise", R.drawable.ic_launcher_background));
+        words.add(new Word("green", "chokokki", R.drawable.ic_launcher_background));
+        words.add(new Word("brown", "takaaki", R.drawable.ic_launcher_background));
+        words.add(new Word("grey", "topoppi", R.drawable.ic_launcher_background));
+        words.add(new Word("black", "kululli", R.drawable.ic_launcher_background));
+        words.add(new Word("white", "kelelli", R.drawable.ic_launcher_background));
 
 
         Log.v("NumbersActivity", "words is an array of numbers one to ten in an array");

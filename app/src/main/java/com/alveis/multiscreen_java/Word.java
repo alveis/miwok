@@ -5,6 +5,7 @@ public class Word {
     private String mMiworkTranslation;
     private int mImageResourceId = NO_IMAGE;
     private static final int NO_IMAGE = -1;
+    private int mAudioResourceId;
 
     public Word(String defaultTranslation, String miworkTranslation){
         mMiworkTranslation = miworkTranslation;

@@ -12,20 +12,20 @@ public class FamilyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.word_list);
+        setContentView(R.layout.list_item);
 
 
         ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("father", "epe"));
-        words.add(new Word("mother", "ete"));
-        words.add(new Word("son", "angsi"));
-        words.add(new Word("duaghter", "tune"));
-        words.add(new Word("older brother", "taachi"));
-        words.add(new Word("younger brother", "chalitti"));
-        words.add(new Word("older sister", "tete"));
-        words.add(new Word("younger sister", "kolliti"));
-        words.add(new Word("grandmother", "ama"));
-        words.add(new Word("grandfather", "paapa"));
+        words.add(new Word("father", "epe", R.drawable.ic_launcher_background));
+        words.add(new Word("mother", "ete", R.drawable.ic_launcher_background));
+        words.add(new Word("son", "angsi", R.drawable.ic_launcher_background));
+        words.add(new Word("duaghter", "tune", R.drawable.ic_launcher_background));
+        words.add(new Word("older brother", "taachi", R.drawable.ic_launcher_background));
+        words.add(new Word("younger brother", "chalitti", R.drawable.ic_launcher_background));
+        words.add(new Word("older sister", "tete", R.drawable.ic_launcher_background));
+        words.add(new Word("younger sister", "kolliti", R.drawable.ic_launcher_background));
+        words.add(new Word("grandmother", "ama", R.drawable.ic_launcher_background));
+        words.add(new Word("grandfather", "paapa", R.drawable.ic_launcher_background));
 
 
         Log.v("NumbersActivity", "words is an array of numbers one to ten in an array");

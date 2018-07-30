@@ -17,19 +17,19 @@ public class NumbersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.word_list);
+        setContentView(R.layout.list_item);
 
 
-        ArrayList<Word> words = new ArrayList<Word>();
+        final ArrayList<Word> words = new ArrayList<Word>();
         words.add(new Word("one", "lutti", R.drawable.ic_launcher_background));
-        words.add(new Word("two", "otiiko"));
-        words.add(new Word("three", "tolookosu"));
-        words.add(new Word("four", "oyyisa"));
-        words.add(new Word("five", "massokka"));
-        words.add(new Word("six", "temmoka"));
-        words.add(new Word("seven", "kenekaku"));
-        words.add(new Word("nine", "wo'e"));
-        words.add(new Word("ten", "na'aacha"));
+        words.add(new Word("two", "otiiko", R.drawable.ic_launcher_background));
+        words.add(new Word("three", "tolookosu", R.drawable.ic_launcher_background));
+        words.add(new Word("four", "oyyisa", R.drawable.ic_launcher_background));
+        words.add(new Word("five", "massokka", R.drawable.ic_launcher_background));
+        words.add(new Word("six", "temmoka", R.drawable.ic_launcher_background));
+        words.add(new Word("seven", "kenekaku", R.drawable.ic_launcher_background));
+        words.add(new Word("nine", "wo'e", R.drawable.ic_launcher_background));
+        words.add(new Word("ten", "na'aacha", R.drawable.ic_launcher_background));
 
 
         Log.v("NumbersActivity", "words is an array of numbers one to ten in an array");
