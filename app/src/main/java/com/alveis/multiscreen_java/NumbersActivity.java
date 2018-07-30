@@ -14,6 +14,18 @@ import java.util.ArrayList;
 public class NumbersActivity extends AppCompatActivity {
     private MediaPlayer mMediaPlayer;
 
+    private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
+        /**
+         * show message when playback is complete
+         * @param mMediaPlayer
+         */
+        @Override
+        public void onCompletion(MediaPlayer mMediaPlayer) {
+            releaseMediaPlayer();
+            Toast.makeText(NumbersActivity.this, "Playback complete", Toast.LENGTH_SHORT).show();
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,10 +62,23 @@ public class NumbersActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Word word = words.get(position);
+
+                /* release memory before starting to play a new song, this is in case the user taps on many  items, one sound file will not be finished
+                * before the next one is clicked, so it is important to clear the memory before starting to play a new song*/
+                releaseMediaPlayer();
                 mMediaPlayer = MediaPlayer.create(NumbersActivity.this,  word.getAudioResourceId());
                 mMediaPlayer.start();
+
+                //clear the memory once playback is complete
+                mMediaPlayer.setOnCompletionListener(mCompletionListener);
                 //Toast.makeText(NumbersActivity.this, "play", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    public void releaseMediaPlayer(){
+        if (mMediaPlayer != null){
+            mMediaPlayer.release();
+            mMediaPlayer = null;
+        }
     }
 }
