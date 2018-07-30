@@ -81,4 +81,11 @@ public class NumbersActivity extends AppCompatActivity {
             mMediaPlayer = null;
         }
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        /* release memory when the app looses focus */
+        releaseMediaPlayer();
+    }
 }
