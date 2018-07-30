@@ -1,13 +1,18 @@
 package com.alveis.multiscreen_java;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
+    MediaPlayer mMediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,5 +46,13 @@ public class NumbersActivity extends AppCompatActivity {
 
         ListView listView = (ListView)findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                mMediaPlayer = MediaPlayer.create(NumbersActivity.this,  R.raw.jason_derulo_stupid_love);
+                mMediaPlayer.start();
+                //Toast.makeText(NumbersActivity.this, "play", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
