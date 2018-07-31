@@ -1,5 +1,7 @@
 package com.alveis.multiscreen_java;
 
+import android.content.Context;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,8 +13,27 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import static android.media.AudioManager.AUDIOFOCUS_LOSS_TRANSIENT;
+
 public class NumbersActivity extends AppCompatActivity {
     private MediaPlayer mMediaPlayer;
+    private AudioManager mAudioManager;
+    AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
+//        @Override
+        public void onAudioFocusChange(int focusChange) {
+            if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK){
+                mMediaPlayer.pause();
+                mMediaPlayer.seekTo(0);
+                //PAUSE PLAYBACK
+            }else if (focusChange == AudioManager.AUDIOFOCUS_GAIN){
+                mMediaPlayer.start();
+                //RESUME PLAYBACK
+            }else if (focusChange == AudioManager.AUDIOFOCUS_LOSS){
+                releaseMediaPlayer();
+                //stop playback
+            }
+        }
+    };
 
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         /**
@@ -30,6 +51,7 @@ public class NumbersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_item);
+        mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
 
         final ArrayList<Word> words = new ArrayList<Word>();
@@ -66,12 +88,19 @@ public class NumbersActivity extends AppCompatActivity {
                 /* release memory before starting to play a new song, this is in case the user taps on many  items, one sound file will not be finished
                 * before the next one is clicked, so it is important to clear the memory before starting to play a new song*/
                 releaseMediaPlayer();
-                mMediaPlayer = MediaPlayer.create(NumbersActivity.this,  word.getAudioResourceId());
-                mMediaPlayer.start();
+                //request audiofocus
+                int result = mAudioManager.requestAudioFocus(mOnAudioFocusChangeListener, AudioManager.STREAM_MUSIC,
+                        AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+                if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+                    //mAudioManager.registerMediaButtonEventReceiver(RemoteControlReceiver);
 
-                //clear the memory once playback is complete
-                mMediaPlayer.setOnCompletionListener(mCompletionListener);
-                //Toast.makeText(NumbersActivity.this, "play", Toast.LENGTH_SHORT).show();
+                    mMediaPlayer = MediaPlayer.create(NumbersActivity.this, word.getAudioResourceId());
+                    mMediaPlayer.start();
+
+                    //clear the memory once playback is complete
+                    mMediaPlayer.setOnCompletionListener(mCompletionListener);
+                    //Toast.makeText(NumbersActivity.this, "play", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -79,6 +108,7 @@ public class NumbersActivity extends AppCompatActivity {
         if (mMediaPlayer != null){
             mMediaPlayer.release();
             mMediaPlayer = null;
+            mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
         }
     }
 
