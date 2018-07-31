@@ -7,12 +7,20 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/colors"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Numbers"
+        android:background="@color/category_colors"
         android:padding="16dp"
-        android:background="@color/category_numbers"
-        android:id="@+id/numbers" />
+        android:text="Colors" />
+
+    <TextView
+        android:id="@+id/numbers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="16dp"
+        android:text="Numbers" />
 
     <TextView
         android:layout_width="match_parent"
@@ -21,14 +29,6 @@
         android:background="@color/category_family"
         android:text="Family"
         android:id="@+id/family" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:background="@color/category_colors"
-        android:text="Colors"
-        android:id="@+id/colors" />
 
     <TextView
         android:layout_width="match_parent"

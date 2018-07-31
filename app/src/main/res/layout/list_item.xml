@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="@dimen/list_item_height"
     android:layout_height="@dimen/list_item_height"
@@ -13,14 +12,18 @@
         android:src="@mipmap/ic_launcher"
         android:padding="16dp"
         android:minHeight="@dimen/list_item_height"
-        android:background="@color/tan_background"/>
+        android:background="@color/tan_background" />
 
 
     <LinearLayout
         android:id="@+id/text_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/list_item_height"
         android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/image"
         android:paddingLeft="16dp">
 
         <TextView
@@ -47,5 +50,13 @@
             tools:text="one" />
 
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/ic_launcher_background" />
 
 </LinearLayout>
