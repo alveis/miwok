@@ -1,6 +1,7 @@
 package com.alveis.multiscreen_java;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
@@ -54,17 +55,19 @@ public class NumbersActivity extends AppCompatActivity {
         mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
 
+        // Create a list of words
+        //made the arraylist final so that it could be accessed inside the onItemClick method.
         final ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("one", "lutti", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
-        words.add(new Word("two", "otiiko", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
-        words.add(new Word("three", "tolookosu", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
-        words.add(new Word("four", "oyyisa", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
-        words.add(new Word("five", "massokka", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
-        words.add(new Word("six", "temmoka", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
-        words.add(new Word("seven", "kenekaku", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
-        words.add(new Word("nine", "wo'e", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
-        words.add(new Word("ten", "na'aacha", R.drawable.ic_launcher_background, R.raw.jason_derulo_stupid_love));
-
+        words.add(new Word("one", "lutti", R.drawable.number_one, R.raw.number_one));
+        words.add(new Word("two", "otiiko", R.drawable.number_two, R.raw.number_two));
+        words.add(new Word("three", "tolookosu", R.drawable.number_three, R.raw.number_three));
+        words.add(new Word("four", "oyyisa", R.drawable.number_four, R.raw.number_four));
+        words.add(new Word("five", "massokka", R.drawable.number_five, R.raw.number_five));
+        words.add(new Word("six", "temmokka", R.drawable.number_six, R.raw.number_six));
+        words.add(new Word("seven", "kenekaku", R.drawable.number_seven, R.raw.number_seven));
+        words.add(new Word("eight", "kawinta", R.drawable.number_eight, R.raw.number_eight));
+        words.add(new Word("nine", "wo’e", R.drawable.number_nine, R.raw.number_nine));
+        words.add(new Word("ten", "na’aacha", R.drawable.number_ten, R.raw.number_ten));
 
         Log.v("NumbersActivity", "words is an array of numbers one to ten in an array");
 //        LinearLayout numbersRootView = (LinearLayout) findViewById(R.id.numbers_root_view);
@@ -79,6 +82,7 @@ public class NumbersActivity extends AppCompatActivity {
         WordAdapter itemsAdapter = new WordAdapter(this,  words, R.color.category_numbers);
 
         ListView listView = (ListView)findViewById(R.id.list);
+        listView.setBackgroundColor(Color.parseColor("#FD8E09"));
         listView.setAdapter(itemsAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
